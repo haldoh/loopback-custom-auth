@@ -8,7 +8,7 @@
   "properties": {},
   "validations": [],
   "relations": {
-    "customTokens": {
+    "accessTokens": {
       "type": "hasMany",
       "model": "CustomToken",
       "foreignKey": "userId",
@@ -17,6 +17,13 @@
       }
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "addToLogin"
+    }
+  ],
   "methods": {}
 }

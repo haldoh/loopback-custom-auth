@@ -27,6 +27,6 @@
     "type": "",
     "url": ""
   },
-  "license": "UNLICENSED",
+  "license": "MIT",
   "description": "loopback-custom-auth"
 }
