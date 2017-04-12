@@ -11,7 +11,6 @@ module.exports = function(Customuser) {
 	 *  keep the same parameter structure.
 	 */
 	Customuser.addToLogin = function (credentials, include, callback) {
-		console.log('start');
 
 		// Invoke the default login function
 		return Customuser.login(credentials, include, function (loginErr, loginToken) {
@@ -32,7 +31,7 @@ module.exports = function(Customuser) {
 				if (findErr)
 					return callback(findErr);
 
-				// Here you can do somethign with the user info
+				// Here you can do something with the user info, or the token, or both
 
 				// Return the access token
 				return callback(null, loginToken.toObject());

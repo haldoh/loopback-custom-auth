@@ -7,9 +7,9 @@ var uuid = require('uuid/v4');
 
 module.exports = function(Customtoken) {
 
-	/** Define a custom token id
+	/** Define a custom token id creation process
 	 */
-	Customtoken.createAccessTokenId = function (callback) {
+	Customtoken.createCustomAccessTokenId = function (callback) {
 		
 		return callback(null, uuid());
 	};
@@ -18,7 +18,7 @@ module.exports = function(Customtoken) {
 	 */
 	Customtoken.observe('before save', function(ctx, next) {
 		// Invoke custom id function
-		return Customtoken.createAccessTokenId(function(err, id) {
+		return Customtoken.createCustomAccessTokenId(function(err, id) {
 			if (err)
 				return next(err);
 			// Substitute id
